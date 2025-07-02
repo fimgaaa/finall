@@ -1,9 +1,4 @@
-﻿//var builder = WebApplication.CreateBuilder(args);
-//var app = builder.Build();
-
-//app.MapGet("/", () => "Hello World!");
-
-//app.Run();
+﻿
 using Microsoft.EntityFrameworkCore;
 using MauiToDoFinal.Api.Data;
 using System.Net.Mail;
@@ -94,53 +89,27 @@ app.MapGet("/api/todo/user/{username}", async (string username, AppDbContext db)
 
 
 // Kullanıcı kaydı
-//app.MapPost("/api/users/register", async (User user, AppDbContext db) =>
+
 app.MapPost("/api/users/register", async (User user, IUserService service) =>
 {
     var created = await service.RegisterUserAsync(user);
     return created != null
         ? Results.Ok(created)
         : Results.BadRequest("Bu kullanıcı adı veya e-posta zaten kayıtlı.");
-    //var exists = await db.Users.AnyAsync(u => u.Username == user.Username || u.Email == user.Email);
-    //if (exists) return Results.BadRequest("Bu kullanıcı adı veya e-posta zaten kayıtlı.");
 
-    //db.Users.Add(user);
-    //await db.SaveChangesAsync();
-    //return Results.Ok(user);
 });
-// Kullanıcı girişi
-//app.MapPost("/api/users/login", async (User loginUser, AppDbContext db) =>
+
 app.MapPost("/api/users/login", async (User loginUser, IUserService service) =>
 {
-    //var user = await db.Users
-    //    .FirstOrDefaultAsync(u => u.Username == loginUser.Username && u.Password == loginUser.Password);
+
     var user = await service.LoginUserAsync(loginUser);
     return user != null ? Results.Ok(user) : Results.Unauthorized();
 });
 
-//app.MapPost("/api/users/forgot-password", async (ForgotPasswordRequest req, AppDbContext db) =>
+
 app.MapPost("/api/users/forgot-password", async (ForgotPasswordRequest req, IUserService service) =>
 {
-    //var user = await db.Users.FirstOrDefaultAsync(u => u.Email == req.Email);
-    //if (user == null) return Results.NotFound("Kullanıcı bulunamadı");
 
-    //try
-    //{
-    //    var message = new MailMessage("no-reply@mauitodo.com", user.Email)
-    //    {
-    //        Subject = "Parola Sıfırlama",
-    //        Body = $"Merhaba {user.Username}, sifre sifirlama isteginiz alindi."
-    //    };
-
-    //    using var smtp = new SmtpClient(smtpHost, smtpPort);
-    //    smtp.Send(message);
-
-    //    return Results.Ok("E-posta gönderildi");
-    //}
-    //catch (Exception ex)
-    //{
-    //    return Results.Problem("E-posta gönderilemedi: " + ex.Message);
-    //}
     var result = await service.SendForgotPasswordEmailAsync(req.Email);
     return result ? Results.Ok("E-posta gönderildi") : Results.NotFound("Kullanıcı bulunamadı");
 });

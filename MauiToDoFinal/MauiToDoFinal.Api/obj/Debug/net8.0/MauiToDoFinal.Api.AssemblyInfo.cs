@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MauiToDoFinal.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5326df6235fc7de84d6ad9f4526b5a208480a594")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ffb07498efc6616c169be67e43bcf820f2d0a1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MauiToDoFinal.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MauiToDoFinal.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
