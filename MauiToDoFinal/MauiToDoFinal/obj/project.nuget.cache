@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "raIj5KNPjLe3NsBtAd2MG3hGqR3AcbkGJImTBh8Xnt1ugnCbbgvrGIkFv8COcrlD+lK4bnt5pOlhkkzYsF4DOg==",
+  "dgSpecHash": "yahcArEaxBImUSp5XxaTXgO1GoHzLoLyJjSanOCXuoNT4e+PehAauT+ayv6DeKWbOHpjSVr/pRGdgKiPnBTlZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal\\MauiToDoFinal.csproj",
+  "projectFilePath": "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal\\MauiToDoFinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Casper\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Casper\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

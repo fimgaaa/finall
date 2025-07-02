@@ -85,4 +85,8 @@ public partial class LoginPage : ContentPage
     {
         Navigation.PushAsync(new RegisterPage());
     }
+    private void OnForgotPassword(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ForgotPasswordPage());
+    }
 }

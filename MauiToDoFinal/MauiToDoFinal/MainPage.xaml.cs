@@ -366,6 +366,7 @@
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
+using Microsoft.Maui.Storage;
 
 
 
@@ -528,6 +529,13 @@ public partial class MainPage : ContentPage
             await Navigation.PushAsync(new DetailPage(selectedItem));
             ToDoListView.SelectedItem = null;
         }
+    }
+
+    private void OnLogoutClicked(object sender, EventArgs e)
+    {
+        Preferences.Remove("username");
+        App.LoggedInUser = string.Empty;
+        Application.Current.MainPage = new NavigationPage(new LoginPage());
     }
 }
 

@@ -6,7 +6,9 @@
 //app.Run();
 using Microsoft.EntityFrameworkCore;
 using MauiToDoFinal.Api.Data;
+using System.Net.Mail;
 using MauiToDoFinal.Api.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -72,7 +74,7 @@ app.MapDelete("/api/todo/{id}", async (int id, AppDbContext db) =>
     return Results.Ok();
 });
 
-// 🔁 Tüm görevleri değil, giriş yapan kullanıcıya göre filtrele
+// Görevleri giriş yapan kullanıcıya göre filtrele
 app.MapGet("/api/todo/user/{username}", async (string username, AppDbContext db) =>
     await db.ToDoItems
             .Where(t => t.CreatedBy == username)
@@ -81,8 +83,8 @@ app.MapGet("/api/todo/user/{username}", async (string username, AppDbContext db)
 // Kullanıcı kaydı
 app.MapPost("/api/users/register", async (User user, AppDbContext db) =>
 {
-    var exists = await db.Users.AnyAsync(u => u.Username == user.Username);
-    if (exists) return Results.BadRequest("Bu kullanıcı adı zaten kayıtlı.");
+    var exists = await db.Users.AnyAsync(u => u.Username == user.Username || u.Email == user.Email);
+    if (exists) return Results.BadRequest("Bu kullanıcı adı veya e-posta zaten kayıtlı.");
 
     db.Users.Add(user);
     await db.SaveChangesAsync();
@@ -97,5 +99,28 @@ app.MapPost("/api/users/login", async (User loginUser, AppDbContext db) =>
     return user != null ? Results.Ok(user) : Results.Unauthorized();
 });
 
+app.MapPost("/api/users/forgot-password", async (ForgotPasswordRequest req, AppDbContext db) =>
+{
+    var user = await db.Users.FirstOrDefaultAsync(u => u.Email == req.Email);
+    if (user == null) return Results.NotFound("Kullanıcı bulunamadı");
+
+    try
+    {
+        var message = new MailMessage("no-reply@mauitodo.com", user.Email)
+        {
+            Subject = "Parola Sıfırlama",
+            Body = $"Merhaba {user.Username}, sifre sifirlama isteginiz alindi."
+        };
+
+        using var smtp = new SmtpClient("localhost");
+        smtp.Send(message);
+
+        return Results.Ok("E-posta gönderildi");
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem("E-posta gönderilemedi: " + ex.Message);
+    }
+});
 
 app.Run();

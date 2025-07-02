@@ -4436,11 +4436,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal.Api\\MauiToDoFinal.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal.Api\\MauiToDoFinal.Api.csproj",
       "projectName": "MauiToDoFinal.Api",
-      "projectPath": "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal.Api\\MauiToDoFinal.Api.csproj",
+      "projectPath": "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal.Api\\MauiToDoFinal.Api.csproj",
       "packagesPath": "C:\\Users\\Casper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal.Api\\obj\\",
+      "outputPath": "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

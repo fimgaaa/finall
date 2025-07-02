@@ -14,13 +14,15 @@ public partial class RegisterPage : ContentPage
 
     private async void OnRegisterClicked(object sender, EventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(UsernameEntry.Text) || string.IsNullOrWhiteSpace(PasswordEntry.Text))
+        if (string.IsNullOrWhiteSpace(UsernameEntry.Text) ||
+    string.IsNullOrWhiteSpace(PasswordEntry.Text) ||
+    string.IsNullOrWhiteSpace(EmailEntry.Text))
         {
             MessageLabel.Text = "Lütfen tüm alanları doldurun.";
             return;
         }
 
-        var user = new { Username = UsernameEntry.Text, Password = PasswordEntry.Text };
+        var user = new { Username = UsernameEntry.Text, Password = PasswordEntry.Text, Email = EmailEntry.Text };
 
         var json = JsonConvert.SerializeObject(user);
         var content = new StringContent(json, Encoding.UTF8, "application/json");

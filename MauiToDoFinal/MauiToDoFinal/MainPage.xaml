@@ -6,6 +6,7 @@
     <VerticalStackLayout Padding="10" Spacing="10">
 
         <Label Text="Görevler" FontSize="24" HorizontalOptions="Center" />
+        <Button Text="Çıkış Yap" Clicked="OnLogoutClicked" />
 
         <Entry x:Name="TitleEntry" Placeholder="Yeni görev girin" />
         <Entry x:Name="CategoryEntry" Placeholder="Kategori girin" />

@@ -7179,11 +7179,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal\\MauiToDoFinal.csproj",
+      "projectUniqueName": "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal\\MauiToDoFinal.csproj",
       "projectName": "MauiToDoFinal",
-      "projectPath": "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal\\MauiToDoFinal.csproj",
+      "projectPath": "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal\\MauiToDoFinal.csproj",
       "packagesPath": "C:\\Users\\Casper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal\\obj\\",
+      "outputPath": "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -7207,8 +7207,8 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "projectReferences": {
-            "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal.Api\\MauiToDoFinal.Api.csproj": {
-              "projectPath": "C:\\Users\\Casper\\source\\repos\\MauiToDoFinal\\MauiToDoFinal.Api\\MauiToDoFinal.Api.csproj"
+            "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal.Api\\MauiToDoFinal.Api.csproj": {
+              "projectPath": "C:\\Users\\Casper\\Documents\\GitHub\\finall\\MauiToDoFinal\\MauiToDoFinal.Api\\MauiToDoFinal.Api.csproj"
             }
           }
         }

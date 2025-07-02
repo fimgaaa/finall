@@ -7,6 +7,7 @@
         <Label Text="Kayıt Ol" FontSize="24" HorizontalOptions="Center" />
 
         <Entry x:Name="UsernameEntry" Placeholder="Kullanıcı Adı" />
+		<Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" />
         <Entry x:Name="PasswordEntry" Placeholder="Şifre" IsPassword="True" />
 
         <Button Text="Kayıt Ol" Clicked="OnRegisterClicked" />
