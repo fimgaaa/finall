@@ -1,10 +1,17 @@
-﻿namespace MauiToDoFinal.Api.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+public class User
 {
-    public class User
-    {
-        public int Id { get; set; }
-        public string Username { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-    }
+    [Key]
+    [Required]
+    [MinLength(4)]
+    public string Username { get; set; }
+
+    [Required]
+    [EmailAddress]
+    public string Email { get; set; }
+
+    [Required]
+    [MinLength(6)]
+    public string Password { get; set; }
 }

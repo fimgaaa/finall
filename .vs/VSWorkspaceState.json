@@ -4,8 +4,10 @@
     "\\MauiToDoFinal",
     "\\MauiToDoFinal\\MauiToDoFinal",
     "\\MauiToDoFinal\\MauiToDoFinal.Api",
-    "\\MauiToDoFinal\\MauiToDoFinal.Api\\Data"
+    "\\MauiToDoFinal\\MauiToDoFinal.Api\\Data",
+    "\\MauiToDoFinal\\MauiToDoFinal.Api\\Models",
+    "\\MauiToDoFinal\\MauiToDoFinal.Api\\Services"
   ],
-  "SelectedNode": "\\MauiToDoFinal\\MauiToDoFinal.sln",
+  "SelectedNode": "\\MauiToDoFinal\\MauiToDoFinal.Api\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }
