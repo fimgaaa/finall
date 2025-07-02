@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiToDoFinal.LoginPage"
+             Title="Giriş Yap">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Kullanıcı Girişi" FontSize="28" HorizontalOptions="Center" />
+
+        <Entry x:Name="usernameEntry" Placeholder="Kullanıcı Adı" />
+        <Entry x:Name="passwordEntry" Placeholder="Şifre" IsPassword="True" />
+
+        <Button Text="Giriş Yap" Clicked="OnLoginClicked" />
+        <Label x:Name="loginStatusLabel" TextColor="Red" IsVisible="False" />
+        <Button Text="Kayıt Ol" Clicked="OnGoToRegister"/>
+
+    </VerticalStackLayout>
+</ContentPage>
