@@ -3,57 +3,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiToDoFinal.MainPage">
 
-    <VerticalStackLayout Padding="10" Spacing="10">
+    <ScrollView>
 
-        <Label Text="Görevler" FontSize="24" HorizontalOptions="Center" />
-        <Button Text="Çıkış Yap" Clicked="OnLogoutClicked" />
+        <VerticalStackLayout Padding="10" Spacing="10">
 
-        <Entry x:Name="TitleEntry" Placeholder="Yeni görev girin" />
-        <Entry x:Name="CategoryEntry" Placeholder="Kategori girin" />
+            <Label Text="Görevler" FontSize="24" HorizontalOptions="Center" />
+            <Button Text="Çıkış Yap" Clicked="OnLogoutClicked" />
 
-        <Label Text="Bitiş Tarihi Seçin:" FontAttributes="Bold" />
-        <DatePicker x:Name="DueDatePicker" />
+            <Entry x:Name="TitleEntry" Placeholder="Yeni görev girin" />
+            <Entry x:Name="CategoryEntry" Placeholder="Kategori girin" />
 
-        <HorizontalStackLayout>
-            <Button x:Name="AddButton" Text="Ekle" Clicked="OnAddClicked" />
-            <Button x:Name="EditButton" Text="Güncelle" Clicked="OnUpdateClicked" IsVisible="False" />
-        </HorizontalStackLayout>
+            <Label Text="Bitiş Tarihi Seçin:" FontAttributes="Bold" />
+            <DatePicker x:Name="DueDatePicker" />
 
-        <Picker x:Name="CategoryPicker" Title="Kategori seçin" SelectedIndexChanged="OnCategorySelected" />
+            <Label Text="Öncelik" FontAttributes="Bold" />
+            <Picker x:Name="PriorityPicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Düşük</x:String>
+                        <x:String>Orta</x:String>
+                        <x:String>Yüksek</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
-        <CollectionView x:Name="ToDoListView" SelectionMode="Single" SelectionChanged="OnItemSelected">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" Margin="0,5">
-                        <StackLayout.Triggers>
-                            <DataTrigger TargetType="StackLayout" Binding="{Binding IsCompleted}" Value="true">
-                                <Setter Property="BackgroundColor" Value="LightGreen" />
-                            </DataTrigger>
-                            <DataTrigger TargetType="StackLayout" Binding="{Binding IsCompleted}" Value="false">
-                                <Setter Property="BackgroundColor" Value="White" />
-                            </DataTrigger>
-                        </StackLayout.Triggers>
+            <HorizontalStackLayout>
+                <Button x:Name="AddButton" Text="Ekle" Clicked="OnAddClicked" />
+                <Button x:Name="EditButton" Text="Güncelle" Clicked="OnUpdateClicked" IsVisible="False" />
+            </HorizontalStackLayout>
 
-                        <Label Text="{Binding Title}" FontAttributes="Bold" />
-                        <Label Text="{Binding Category}" FontAttributes="Italic" />
-                        <Label Text="{Binding CompletionText}" />
+            <Picker x:Name="CategoryPicker" Title="Kategori seçin" SelectedIndexChanged="OnCategorySelected" />
+
+            <!-- CollectionView kaydırılabilir olduğu için ayrı tutulur -->
+            <CollectionView x:Name="ToDoListView" SelectionMode="Single" SelectionChanged="OnItemSelected" HeightRequest="500">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" Margin="0,5">
+                            <StackLayout.Triggers>
+                                <DataTrigger TargetType="StackLayout" Binding="{Binding IsCompleted}" Value="true">
+                                    <Setter Property="BackgroundColor" Value="LightGreen" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="StackLayout" Binding="{Binding IsCompleted}" Value="false">
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </DataTrigger>
+                            </StackLayout.Triggers>
+
+                            <Label Text="{Binding Title}" FontAttributes="Bold" />
+                            <Label Text="{Binding Category}" FontAttributes="Italic" />
+                            <Label Text="{Binding CompletionText}" />
+                            <Label Text="{Binding Priority}" TextColor="DarkRed" FontAttributes="Bold"/>
+
+                            <Button Text="Sil"
+                                    Clicked="OnDeleteClicked"
+                                    CommandParameter="{Binding Id}"
+                                    BackgroundColor="Red"
+                                    TextColor="White" />
+
+                            <Button Text="Durumu Değiştir"
+                                    Clicked="OnToggleCompletedClicked" />
+
+                            <Button Text="Düzenle"
+                                    Clicked="OnEditClicked" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
 
 
-                        <Button Text="Sil"
-                                Clicked="OnDeleteClicked"
-                                CommandParameter="{Binding Id}"
-                                BackgroundColor="Red"
-                                TextColor="White" />
-
-                        <Button Text="Durumu Değiştir"
-                                Clicked="OnToggleCompletedClicked" />
-
-                        <Button Text="Düzenle"
-                                Clicked="OnEditClicked" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
-    </VerticalStackLayout>
 </ContentPage>

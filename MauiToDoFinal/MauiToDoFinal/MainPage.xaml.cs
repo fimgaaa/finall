@@ -367,6 +367,7 @@ using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.Maui.Storage;
+using MauiToDoFinal.Api.Models;
 
 
 
@@ -409,6 +410,8 @@ public partial class MainPage : ContentPage
         if (string.IsNullOrWhiteSpace(TitleEntry.Text))
             return;
 
+        var priority = (PriorityLevel)(PriorityPicker.SelectedIndex + 1); // Enum sırasına göre
+
         var newItem = new ToDoItem
         {
             Title = TitleEntry.Text,
@@ -416,7 +419,8 @@ public partial class MainPage : ContentPage
             CreatedBy = App.LoggedInUser ?? "admin",
             CreatedAt = DateTime.Now,
             Category = CategoryEntry.Text,
-            DueDate = DueDatePicker.Date
+            DueDate = DueDatePicker.Date,
+            Priority = priority
         };
 
         var json = JsonConvert.SerializeObject(newItem);
@@ -551,4 +555,5 @@ public class ToDoItem
     public string? UpdatedBy { get; set; }
     public DateTime DueDate { get; set; }
     public string CompletionText => IsCompleted ? "Yapıldı" : "Yapılmadı";
+    public PriorityLevel Priority { get; set; } = PriorityLevel.Orta;
 }

@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-07-02T04:02:47.896</Modified>
+      <Modified>2025-07-02T06:12:35.323</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,15 +43,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MauiToDoFinal.dll">
       <PackagePath>MauiToDoFinal.dll</PackagePath>
-      <Modified>2025-07-02T04:02:46.659</Modified>
+      <Modified>2025-07-02T06:12:33.898</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal.Api\obj\Debug\net8.0\apphost.exe">
       <PackagePath>MauiToDoFinal.Api.exe</PackagePath>
-      <Modified>2025-07-02T03:58:35.714</Modified>
+      <Modified>2025-07-02T06:12:19.824</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MauiToDoFinal.exe</PackagePath>
-      <Modified>2025-07-02T04:02:46.674</Modified>
+      <Modified>2025-07-02T06:12:33.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal.Api\bin\Debug\net8.0\MauiToDoFinal.Api.runtimeconfig.json">
       <PackagePath>MauiToDoFinal.Api.runtimeconfig.json</PackagePath>
@@ -63,7 +63,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal.Api\appsettings.json">
       <PackagePath>appsettings.json</PackagePath>
-      <Modified>2025-07-02T03:37:09.625</Modified>
+      <Modified>2025-07-02T05:07:37.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -699,11 +699,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal.Api\bin\Debug\net8.0\MauiToDoFinal.Api.dll">
       <PackagePath>MauiToDoFinal.Api.dll</PackagePath>
-      <Modified>2025-07-02T03:58:35.714</Modified>
+      <Modified>2025-07-02T06:12:19.731</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\Documents\GitHub\finall\MauiToDoFinal\MauiToDoFinal.Api\bin\Debug\net8.0\MauiToDoFinal.Api.deps.json">
       <PackagePath>MauiToDoFinal.Api.deps.json</PackagePath>
-      <Modified>2025-07-02T03:37:22.405</Modified>
+      <Modified>2025-07-02T06:12:24.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Casper\.nuget\packages\microsoft.maui.controls.compatibility\8.0.100\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
